@@ -49,35 +49,34 @@ const chessboard: Chessboard = {
   G1: { name: "knight", color: "white", imageSrc: "svg/WhiteKnight.svg" },
   H1: { name: "rook", color: "white", imageSrc: "svg/WhiteRook.svg" },
 };
-
 </script>
 
 <template>
   <main class="flex flex-col justify-center items-center">
     <h2 class="text-2xl text-white my-8">Chess with VueJS</h2>
     <div
-      class="flex relative justify-center items-center p-12 w-[80vh] h-[80vh] bg-neutral-900"
+      class="flex relative justify-center items-center p-4 md:p-8 md:w-[80vh] md:h-[80vh] bg-neutral-900"
     >
       <!-- Guide marks -->
       <div
-        class="absolute flex flex-col h-full text-white py-12 justify-around left-4"
+        class="absolute flex flex-col h-full text-white py-2 md:py-8 justify-around left-1 md:left-3"
       >
-        <p v-for="n in rows">{{ n }}</p>
+        <p class="text-[0.5rem] md:text-base" v-for="n in rows">{{ n }}</p>
       </div>
       <div
-        class="absolute flex flex-col h-full text-white py-12 justify-around right-4"
+        class="absolute flex flex-col h-full text-white py-2 md:py-8 justify-around right-1 md:right-3"
       >
-        <p v-for="n in rows">{{ n }}</p>
+        <p class="text-[0.5rem] md:text-base" v-for="n in rows">{{ n }}</p>
       </div>
       <div
-        class="absolute flex flex-row w-full text-white px-12 justify-around top-4"
+        class="absolute flex flex-row w-full text-white px-2 md:px-8 justify-around top-1"
       >
-        <p v-for="n in cols">{{ n }}</p>
+        <p class="text-[0.5rem] md:text-base" v-for="n in cols">{{ n }}</p>
       </div>
       <div
-        class="absolute flex flex-row w-full text-white px-12 justify-around bottom-4"
+        class="absolute flex flex-row w-full text-white px-2 md:px-8 justify-around bottom-1"
       >
-        <p v-for="n in cols">{{ n }}</p>
+        <p class="text-[0.5rem] md:text-base" v-for="n in cols">{{ n }}</p>
       </div>
       <!-- Chessboard -->
       <div
