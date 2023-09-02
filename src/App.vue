@@ -52,7 +52,7 @@ const chessboard: Chessboard = {
 </script>
 
 <template>
-  <main class="flex flex-col justify-center items-center">
+  <main class="flex flex-col justify-center items-center w-screen h-screen">
     <h2 class="text-2xl text-white my-8">Chess with VueJS</h2>
     <div
       class="flex relative justify-center items-center p-4 md:p-8 md:w-[80vh] md:h-[80vh] bg-neutral-900"
