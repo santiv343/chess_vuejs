@@ -1,17 +1,27 @@
 <script setup lang="ts">
-import { ref } from "vue";
+// import { ref } from "vue";
+import { ChessPieceType } from "../utils/constants";
 
-const props = defineProps(["imageSrc",'']);
-const isSelected = ref(false);
+const { piece, isActive } = defineProps<{
+  // imageSrc: string;
+  piece: ChessPieceType;
+  // position: string;
+  isActive?: boolean | null;
+}>();
+const emits = defineEmits<{
+  (e: "handleActivePiece", piece: ChessPieceType): void;
+}>();
+
+// const isSelected = ref(false);
 </script>
 
 <template>
   <div
-    @click="isSelected = !isSelected"
+    @click="emits('handleActivePiece', piece)"
     :class="`flex justify-center items-center h-full w-full cursor-pointer ${
-      isSelected ? 'border-2 border-white' : ''
+      isActive ? 'border-4 border-white' : ''
     }`"
   >
-    <img draggable="false" width="60" height="60" :src="props.imageSrc" />
+    <img draggable="false" width="60" height="60" :src="piece.imageSrc" />
   </div>
 </template>
